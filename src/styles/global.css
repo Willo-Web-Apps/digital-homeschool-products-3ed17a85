@@ -1,57 +1,99 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap');
 
 /* -----------------------------------------------------------------------
-   Design Tokens — customize these to change the entire site's look.
-   The Product Agent should edit this @theme block to match the business:
-   - Swap fonts (Google Fonts @import above, font families below)
-   - Change brand colors to match the business personality
-   - Flip surface colors for dark theme (swap light/dark values)
+   Design Tokens — Bright Nest Learning
+   Playful-creative · Warm coral, sunshine yellow, teal, deep navy
+   Light theme with vibrant colored sections
    ----------------------------------------------------------------------- */
 
 @theme {
-  /* Typography — replace with distinctive Google Fonts for the business */
-  --font-display: ui-sans-serif, system-ui, sans-serif;
-  --font-body: ui-sans-serif, system-ui, sans-serif;
+  /* Typography */
+  --font-display: 'Fredoka', 'Comic Sans MS', ui-rounded, sans-serif;
+  --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand color scale — agent should customize per business */
-  --color-brand-50: oklch(0.97 0.01 250);
-  --color-brand-100: oklch(0.93 0.02 250);
-  --color-brand-200: oklch(0.87 0.04 250);
-  --color-brand-400: oklch(0.70 0.12 250);
-  --color-brand-500: oklch(0.60 0.16 250);
-  --color-brand-600: oklch(0.50 0.16 250);
+  /* Brand — Coral Red (primary) */
+  --color-brand-50:  oklch(0.97 0.02 25);
+  --color-brand-100: oklch(0.93 0.05 25);
+  --color-brand-200: oklch(0.85 0.09 25);
+  --color-brand-400: oklch(0.70 0.16 25);
+  --color-brand-500: oklch(0.60 0.18 25);
+  --color-brand-600: oklch(0.50 0.18 25);
 
-  /* Surface colors — light theme defaults. Flip for dark theme:
-     surface-50 becomes near-black, surface-900 becomes near-white */
-  --color-surface-50: oklch(0.985 0.002 250);
-  --color-surface-100: oklch(0.96 0.004 250);
-  --color-surface-200: oklch(0.92 0.006 250);
-  --color-surface-800: oklch(0.30 0.015 250);
-  --color-surface-900: oklch(0.20 0.015 250);
-  --color-surface-950: oklch(0.14 0.012 250);
+  /* Accent — Sunshine Yellow */
+  --color-accent-50:  oklch(0.98 0.03 85);
+  --color-accent-100: oklch(0.95 0.07 85);
+  --color-accent-200: oklch(0.92 0.12 85);
+  --color-accent-400: oklch(0.88 0.16 85);
+  --color-accent-500: oklch(0.85 0.17 85);
+  --color-accent-600: oklch(0.78 0.17 85);
+
+  /* Teal */
+  --color-teal-400: oklch(0.76 0.12 185);
+  --color-teal-500: oklch(0.72 0.12 185);
+  --color-teal-600: oklch(0.64 0.12 185);
+  --color-teal-50:  oklch(0.96 0.03 185);
+  --color-teal-100: oklch(0.92 0.06 185);
+
+  /* Navy */
+  --color-navy-900: oklch(0.22 0.07 255);
+  --color-navy-800: oklch(0.28 0.07 255);
+  --color-navy-700: oklch(0.34 0.07 255);
+
+  /* Surface — warm cream tones */
+  --color-surface-50:  oklch(0.985 0.012 60);
+  --color-surface-100: oklch(0.97 0.018 60);
+  --color-surface-200: oklch(0.93 0.020 60);
+  --color-surface-300: oklch(0.88 0.018 60);
+  --color-surface-800: oklch(0.30 0.015 60);
+  --color-surface-900: oklch(0.22 0.012 60);
+  --color-surface-950: oklch(0.14 0.010 60);
 }
 
-/* Page-load animations — CSS only, no JS required */
+/* -----------------------------------------------------------------------
+   Page-load animations
+   ----------------------------------------------------------------------- */
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out both;
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-.animate-slide-up {
-  animation: slideUp 0.6s ease-out both;
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.7); }
+  60%  { opacity: 1; transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-/* Staggered animation delays for cascading reveals */
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50%       { transform: rotate(3deg); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-fade-in    { animation: fadeIn 0.6s ease-out both; }
+.animate-slide-up   { animation: slideUp 0.65s ease-out both; }
+.animate-slide-left { animation: slideInLeft 0.65s ease-out both; }
+.animate-bounce-in  { animation: bounceIn 0.6s ease-out both; }
+.animate-wiggle     { animation: wiggle 2s ease-in-out infinite; }
+.animate-float      { animation: floatY 3s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.10s; }
+.delay-200 { animation-delay: 0.20s; }
+.delay-300 { animation-delay: 0.30s; }
+.delay-400 { animation-delay: 0.40s; }
+.delay-500 { animation-delay: 0.50s; }
+.delay-600 { animation-delay: 0.60s; }
