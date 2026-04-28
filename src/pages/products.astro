@@ -51,9 +51,24 @@ const products = [
         accent: "#C8A800",
       },
       {
-        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-4s-c7aca044.jpg",
-        alt: "4s Table Worksheet",
-        accent: "#4CAF50",
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-x5-5630eaa3.jpg",
+        alt: "5s Table Worksheet",
+        accent: "#3ABFB8",
+      },
+      {
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-x6-ab3f1951.jpg",
+        alt: "6s Table Worksheet",
+        accent: "#5B9BD5",
+      },
+      {
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-x7-a9cec68e.jpg",
+        alt: "7s Table Worksheet",
+        accent: "#9B59B6",
+      },
+      {
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-x8-2737423f.jpg",
+        alt: "8s Table Worksheet",
+        accent: "#E91E8C",
       },
     ],
     description: "The complete multiplication facts practice set — one colorful worksheet per table, from 1s through 12s. Each sheet has 24 randomized problems and its own unique color theme to make practice fun and memorable. Print the full bundle or individual tables as needed!",
@@ -106,18 +121,21 @@ const products = [
               </span>
             </div>
             {product.images ? (
-              <!-- 2x2 grid preview for bundles -->
-              <div class="grid grid-cols-2 gap-1 p-1 h-full" style="min-height: 320px;">
-                {product.images.map((img: {src: string; alt: string; accent: string}) => (
-                  <div class="relative overflow-hidden rounded-lg" style={`border: 2px solid ${img.accent}40;`}>
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                      style="min-height: 150px;"
-                    />
-                  </div>
-                ))}
+              <!-- Scrollable preview grid for bundles -->
+              <div class="p-3 h-full overflow-y-auto" style="min-height: 320px; max-height: 480px;">
+                <div class="grid grid-cols-2 gap-2">
+                  {product.images.map((img: {src: string; alt: string; accent: string}) => (
+                    <div class="relative overflow-hidden rounded-xl" style={`border: 2px solid ${img.accent}60;`}>
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        class="w-full object-cover object-top"
+                        style="aspect-ratio: 3/4;"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <p class="text-center text-xs mt-2 font-semibold" style="color: oklch(0.50 0.12 200);">+ 4 more worksheets (9s–12s) included!</p>
               </div>
             ) : (
               <img
