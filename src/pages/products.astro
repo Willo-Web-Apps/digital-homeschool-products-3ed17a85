@@ -13,6 +13,7 @@ const products = [
     badge: "🏆 Best Seller",
     badgeColor: "#E8533A",
     image: chartImageUrl,
+    images: null,
     description: "A beautifully organized, color-coded reference chart covering ALL the measurement units your homeschooler needs — from length and capacity to weight and temperature. Perfect for math lessons, science units, and hanging on the learning wall!",
     features: [
       "✅ Customary AND Metric units side-by-side",
@@ -21,6 +22,48 @@ const products = [
       "✅ Color-coded by category for easy learning",
       "✅ Print-ready PDF — 8.5×11 format",
       "✅ Works for grades 3–8",
+    ],
+    checkoutUrl: "#coming-soon",
+    comingSoon: true,
+  },
+  {
+    id: "multiplication-bundle",
+    title: "Multiplication Tables Worksheet Bundle (1s–12s)",
+    subtitle: "12 Worksheets · Instant Digital Download · Printable PDFs",
+    price: "$7.99",
+    badge: "🌟 Complete Bundle",
+    badgeColor: "#3ABFB8",
+    image: null,
+    images: [
+      {
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-1s-b23bede7.jpg",
+        alt: "1s Table Worksheet",
+        accent: "#E8533A",
+      },
+      {
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-2s-a7d97d31.jpg",
+        alt: "2s Table Worksheet",
+        accent: "#F5A623",
+      },
+      {
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-3s-306452a4.jpg",
+        alt: "3s Table Worksheet",
+        accent: "#C8A800",
+      },
+      {
+        src: "https://kufdcnvteecdsgfbxbyn.supabase.co/storage/v1/object/public/business-assets/a5f8640e-aaef-4165-ab7b-bccea5660286/images/multiplication-worksheet-4s-c7aca044.jpg",
+        alt: "4s Table Worksheet",
+        accent: "#4CAF50",
+      },
+    ],
+    description: "The complete multiplication facts practice set — one colorful worksheet per table, from 1s through 12s. Each sheet has 24 randomized problems and its own unique color theme to make practice fun and memorable. Print the full bundle or individual tables as needed!",
+    features: [
+      "✅ 12 worksheets — full 1s through 12s coverage",
+      "✅ 24 randomized problems per worksheet",
+      "✅ Each table has its own color theme 🎨",
+      "✅ Name, Date & Score fields included",
+      "✅ Print-ready PDF — 8.5×11 format",
+      "✅ Perfect for grades 2–5",
     ],
     checkoutUrl: "#coming-soon",
     comingSoon: true,
@@ -62,12 +105,28 @@ const products = [
                 {product.badge}
               </span>
             </div>
-            <img
-              src={product.image}
-              alt={product.title}
-              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-              style="min-height: 320px; max-height: 480px;"
-            />
+            {product.images ? (
+              <!-- 2x2 grid preview for bundles -->
+              <div class="grid grid-cols-2 gap-1 p-1 h-full" style="min-height: 320px;">
+                {product.images.map((img: {src: string; alt: string; accent: string}) => (
+                  <div class="relative overflow-hidden rounded-lg" style={`border: 2px solid ${img.accent}40;`}>
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      style="min-height: 150px;"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <img
+                src={product.image}
+                alt={product.title}
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                style="min-height: 320px; max-height: 480px;"
+              />
+            )}
           </div>
 
           <!-- Product Details -->
