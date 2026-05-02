@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title = "Homegrown — Colorful Homeschool Curriculum & Printables", description = "Beautiful, print-ready homeschool curriculum packs for curious kids aged 3–12. Download colorful unit studies, activity packs, and lesson bundles instantly." } = Astro.props;
+const { title = "Homegrown — Whimsical Homeschool Curriculum & Printables", description = "Beautiful, print-ready homeschool curriculum packs for curious kids aged 3–12. Download illustrated unit studies, activity packs, and lesson bundles instantly." } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -24,12 +24,12 @@ const { title = "Homegrown — Colorful Homeschool Curriculum & Printables", des
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Homegrown",
-      "description": "Beautiful, print-ready homeschool curriculum packs for curious kids aged 3–12. Colorful unit studies, activity packs, and lesson bundles — instant digital downloads.",
+      "description": "Beautiful, print-ready homeschool curriculum packs for curious kids aged 3–12. Illustrated unit studies, activity packs, and lesson bundles — instant digital downloads.",
       "url": "https://digital-homeschool-products.onrender.com"
     }
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-surface-50 text-surface-900 font-body antialiased">
+  <body class="min-h-screen flex flex-col antialiased" style="background: #F5EFE0; color: #2F4A35; font-family: 'Lora', Georgia, serif;">
     <Header />
     <main class="flex-1">
       <slot />

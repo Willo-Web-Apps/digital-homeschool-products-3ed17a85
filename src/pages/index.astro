@@ -2,168 +2,189 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base 
-  title="Homegrown — Colorful Homeschool Curriculum &amp; Printables" 
-  description="Beautiful, print-ready homeschool curriculum packs designed for curious kids aged 3–12. Download colorful unit studies, activity packs, and lesson bundles today."
+  title="Homegrown — Beautiful Homeschool Curriculum & Printables" 
+  description="Beautiful, print-ready homeschool curriculum packs designed for curious kids aged 3–12. Download illustrated unit studies, activity packs, and lesson bundles today."
 >
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       HERO — Coral gradient, warm and energizing
+       HERO — Pastoral landscape: parchment sky, sage hills, paper texture
   ═══════════════════════════════════════════════════════════════════ -->
-  <section class="hero-section relative overflow-hidden" style="background: oklch(0.60 0.18 25);">
+  <section class="hero-section relative overflow-hidden" style="min-height: 88vh; background: #EEF3EB;">
 
-    <!-- Layered gradient lighting -->
+    <!-- Layered sky-to-hills pastoral gradient -->
     <div class="absolute inset-0" style="
       background:
-        radial-gradient(ellipse 80% 60% at 10% 20%, oklch(0.72 0.18 50 / 0.55) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 50% at 90% 80%, oklch(0.85 0.17 85 / 0.35) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 70% 10%, oklch(0.72 0.12 185 / 0.20) 0%, transparent 50%),
-        linear-gradient(155deg, oklch(0.58 0.19 22) 0%, oklch(0.62 0.17 30) 50%, oklch(0.68 0.16 40) 100%);
+        radial-gradient(ellipse 90% 50% at 50% 0%, #C8D8E8 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 15% 30%, #E8F0E4 0%, transparent 55%),
+        radial-gradient(ellipse 50% 35% at 85% 25%, #F0E8D8 0%, transparent 50%),
+        linear-gradient(to bottom, #D4E4EC 0%, #E8EDE4 35%, #EEF3EB 60%, #D6E4CF 100%);
     "></div>
 
-    <!-- Noise texture -->
-    <div class="absolute inset-0 hero-noise" style="
-      background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\");
-      opacity: 0.04;
-      mix-blend-mode: overlay;
-      pointer-events: none;
+    <!-- Paper texture overlay -->
+    <div class="absolute inset-0 pointer-events-none" style="
+      background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E&quot;);
+      opacity: 0.5;
+      mix-blend-mode: multiply;
     "></div>
 
-    <!-- Decorative floating shapes -->
-    <div class="absolute top-10 left-6 md:left-16 opacity-70 animate-float" style="animation-delay: 0s;">
-      <div class="w-14 h-14 rounded-full" style="background: oklch(0.85 0.17 85 / 0.85);"></div>
+    <!-- Floating decorative botanical elements -->
+    <!-- Leaf cluster top-left -->
+    <div class="absolute top-12 left-6 md:left-20 opacity-60 animate-float" style="animation-delay: 0s;">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 44 C24 44 4 32 4 18 C4 10 12 4 24 8 C36 4 44 10 44 18 C44 32 24 44 24 44Z" fill="#5C7A4E" opacity="0.55"/>
+        <path d="M24 8 L24 44" stroke="#4A6340" stroke-width="1.5" opacity="0.4"/>
+        <path d="M24 18 C20 15 14 16 12 20" stroke="#4A6340" stroke-width="1" opacity="0.35"/>
+        <path d="M24 28 C28 25 34 26 36 30" stroke="#4A6340" stroke-width="1" opacity="0.35"/>
+      </svg>
     </div>
-    <div class="absolute top-20 right-10 md:right-24 opacity-60 animate-float" style="animation-delay: 1.2s;">
-      <div class="w-8 h-8 rounded-full" style="background: oklch(0.72 0.12 185 / 0.9);"></div>
+    <!-- Small bird / sparrow top-right -->
+    <div class="absolute top-16 right-12 md:right-32 opacity-50 animate-float" style="animation-delay: 1.4s; font-size: 1.5rem;">🐦</div>
+    <!-- Floating sprig center-right -->
+    <div class="absolute top-1/3 right-6 md:right-16 opacity-40 animate-float" style="animation-delay: 0.7s; font-size: 2rem;">🌿</div>
+    <!-- Sun top-right distant -->
+    <div class="absolute top-8 right-1/3 opacity-30 animate-float" style="animation-delay: 2s; font-size: 1.8rem;">☀</div>
+    <!-- Wildflower bottom-left -->
+    <div class="absolute bottom-36 left-8 md:left-24 animate-float" style="animation-delay: 1.1s; opacity: 0.45;">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="5" fill="#D4A843" opacity="0.8"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(0 18 18)"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(45 18 18)"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(90 18 18)"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(135 18 18)"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(180 18 18)"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(225 18 18)"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(270 18 18)"/>
+        <ellipse cx="18" cy="8" rx="4" ry="7" fill="#C4735A" opacity="0.6" transform="rotate(315 18 18)"/>
+      </svg>
     </div>
-    <div class="absolute bottom-24 left-12 md:left-32 opacity-50 animate-float" style="animation-delay: 0.6s;">
-      <div class="w-10 h-10 rounded-lg rotate-12" style="background: oklch(0.85 0.17 85 / 0.7);"></div>
-    </div>
-    <div class="absolute bottom-16 right-8 md:right-20 opacity-60 animate-float" style="animation-delay: 1.8s;">
-      <div class="w-12 h-12 rounded-full" style="background: oklch(0.92 0.12 60 / 0.5);"></div>
-    </div>
-    <div class="absolute top-1/2 right-4 md:right-12 opacity-40 animate-float" style="animation-delay: 0.9s;">
-      <div class="w-6 h-6 rounded-full" style="background: white;"></div>
-    </div>
+    <!-- Tiny sparkle / cross top-center -->
+    <div class="absolute top-20 left-1/2 -translate-x-12 opacity-35" style="font-size: 1.2rem; color: #D4A843;">✦</div>
+    <div class="absolute top-32 right-1/4 opacity-30" style="font-size: 1rem; color: #5C7A4E;">✿</div>
 
     <!-- Hero content -->
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-36 md:pt-28 md:pb-44 text-center">
 
       <!-- Tag pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 animate-bounce-in"
-           style="background: oklch(0.85 0.17 85); color: oklch(0.22 0.07 255);">
-        <span>✨</span>
-        <span>Digital Downloads for Homeschool Families</span>
+      <div class="inline-flex items-center gap-2 px-5 py-2 mb-8 animate-bounce-in"
+           style="background: #F5EFE0; color: #5C7A4E; border: 1.5px solid #D9CEB2; border-radius: 10px; font-family: 'Caveat', cursive; font-size: 1.05rem; font-weight: 700; box-shadow: 0 2px 8px rgba(92,122,78,0.10);">
+        ✿ Illustrated Printables for Homeschool Families
       </div>
 
       <!-- Headline -->
-      <h1 class="font-display font-bold leading-[1.1] tracking-tight animate-slide-up"
-          style="font-size: clamp(2.6rem, 7vw, 4.5rem); color: white;">
-        Beautiful Learning Materials<br>
-        <span style="color: oklch(0.85 0.17 85);">Your Kids Will Beg to Use</span>
+      <h1 class="animate-slide-up" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(2.8rem, 8vw, 5.5rem); line-height: 1.08; letter-spacing: -0.02em; color: #2F4A35;">
+        School Around the<br>Kitchen Table
       </h1>
+      <!-- Script subline — Caveat in dusty rose, hand-lettered feel -->
+      <p class="animate-slide-up delay-100" style="font-family: 'Caveat', cursive; font-size: clamp(1.6rem, 4.5vw, 2.6rem); font-weight: 700; color: #C4735A; margin-top: 0.25em; line-height: 1.25;">
+        where curious kids grow wild &amp; wonderful
+      </p>
 
       <!-- Sub -->
-      <p class="mt-6 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto animate-slide-up delay-100"
-         style="color: oklch(0.98 0.01 30 / 0.90); font-family: var(--font-body);">
-        Colorful, print-ready homeschool curriculum packs designed for curious kids aged 3–12 — download and start today.
+      <p class="mt-7 max-w-xl mx-auto animate-slide-up delay-200"
+         style="font-family: 'Lora', serif; font-style: italic; font-size: 1.1rem; line-height: 1.8; color: #5C5240;">
+        Illustrated, print-ready curriculum packs for ages 3–12 — designed for the family that learns in muddy boots, at the farmhouse table, all five kids at once.
       </p>
 
       <!-- CTAs -->
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-200">
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-300">
         <a href="#products"
-           class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-semibold font-display transition-all duration-200 hover:scale-105 hover:shadow-xl"
-           style="background: oklch(0.85 0.17 85); color: oklch(0.22 0.07 255); box-shadow: 0 4px 20px oklch(0.85 0.17 85 / 0.4);">
-          🛒 Shop the Store
+           class="inline-flex items-center justify-center gap-2 px-8 py-4 text-base transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+           style="background: #5C7A4E; color: #F5EFE0; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; border-radius: 12px; box-shadow: 0 4px 18px rgba(92,122,78,0.28); min-height: 52px;">
+          🧺 Shop the Packs
         </a>
-        <a href="#how-it-works"
-           class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-semibold font-display transition-all duration-200 hover:scale-105"
-           style="background: white / 0.15; border: 2px solid white; color: white; backdrop-filter: blur(8px); background-color: rgba(255,255,255,0.15);">
-          See How It Works →
+        <a href="#cta"
+           class="inline-flex items-center justify-center gap-2 px-8 py-4 text-base transition-all duration-200 hover:bg-opacity-80 hover:-translate-y-0.5"
+           style="background: #F5EFE0; border: 2px solid #D9CEB2; color: #2F4A35; font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.15rem; border-radius: 12px; min-height: 52px;">
+          Claim My Free Sampler ✿
         </a>
       </div>
 
       <!-- Social proof micro -->
-      <div class="mt-10 flex flex-wrap justify-center gap-6 animate-fade-in delay-400">
-        <div class="flex items-center gap-2" style="color: oklch(0.98 0.01 30 / 0.85);">
-          <span class="text-xl">⭐</span>
-          <span class="text-sm font-semibold font-body">4.9/5 from 2,000+ families</span>
+      <div class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 animate-fade-in delay-400">
+        <div class="flex items-center gap-2" style="color: #5C5240;">
+          <span style="color: #D4A843; font-size: 1rem;">★★★★★</span>
+          <span style="font-family: 'Lora', serif; font-size: 0.875rem;">Rated 4.9 by 2,000+ families</span>
         </div>
-        <div class="flex items-center gap-2" style="color: oklch(0.98 0.01 30 / 0.85);">
-          <span class="text-xl">📥</span>
-          <span class="text-sm font-semibold font-body">Instant digital download</span>
+        <div class="flex items-center gap-2" style="color: #5C5240;">
+          <span style="font-size: 1rem;">📥</span>
+          <span style="font-family: 'Lora', serif; font-size: 0.875rem;">Instant PDF · Print forever</span>
         </div>
-        <div class="flex items-center gap-2" style="color: oklch(0.98 0.01 30 / 0.85);">
-          <span class="text-xl">🖨️</span>
-          <span class="text-sm font-semibold font-body">Print as many times as you need</span>
+        <div class="flex items-center gap-2" style="color: #5C5240;">
+          <span style="font-size: 1rem;">🌱</span>
+          <span style="font-family: 'Lora', serif; font-size: 0.875rem;">No subscription · Yours to keep</span>
         </div>
       </div>
     </div>
 
-    <!-- Wave divider bottom -->
-    <div class="absolute bottom-0 left-0 right-0 leading-none" style="line-height: 0;">
-      <svg viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:56px; display:block;">
-        <path d="M0 56 C240 20 480 56 720 36 C960 16 1200 52 1440 28 L1440 56 L0 56 Z" fill="oklch(0.985 0.012 60)"/>
+    <!-- Rolling hills SVG bottom — multi-layered pastoral landscape -->
+    <div class="absolute bottom-0 left-0 right-0" style="line-height: 0;">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:120px; display:block;">
+        <!-- Distant hill — lightest sage -->
+        <path d="M0 90 C120 55 280 80 440 62 C600 44 720 72 880 55 C1040 38 1180 68 1340 50 C1400 44 1430 56 1440 52 L1440 120 L0 120 Z" fill="#BACDB1" opacity="0.5"/>
+        <!-- Mid hill — medium sage -->
+        <path d="M0 105 C80 72 200 96 350 78 C500 60 640 90 800 72 C960 54 1100 84 1280 68 C1370 60 1420 78 1440 74 L1440 120 L0 120 Z" fill="#8DAF7D" opacity="0.6"/>
+        <!-- Front hill — parchment (merges with next section) -->
+        <path d="M0 115 C100 88 240 110 400 96 C560 82 700 108 860 94 C1020 80 1160 104 1320 92 C1390 87 1430 100 1440 96 L1440 120 L0 120 Z" fill="#F5EFE0"/>
       </svg>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       HOW IT WORKS — Warm cream, 3-step process
+       HOW IT WORKS — Parchment, 3-step process, botanical style
   ═══════════════════════════════════════════════════════════════════ -->
-  <section id="how-it-works" class="py-20 md:py-28" style="background: oklch(0.985 0.012 60);">
+  <section id="how-it-works" class="py-20 md:py-28" style="background: #F5EFE0;">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="text-center mb-14">
-        <span class="inline-block px-4 py-1.5 rounded-full text-sm font-semibold font-display mb-4"
-              style="background: oklch(0.93 0.05 25); color: oklch(0.50 0.18 25);">
-          Simple as 1-2-3
+        <span class="inline-block px-4 py-1.5 mb-4" style="font-family: 'Caveat', cursive; font-size: 1.2rem; font-weight: 700; color: #5C7A4E;">
+          Simple as 1-2-3 ✿
         </span>
-        <h2 class="font-display font-bold" style="font-size: clamp(2rem, 5vw, 3rem); color: oklch(0.22 0.07 255);">
+        <h2 class="font-bold" style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: #2F4A35; letter-spacing: -0.01em;">
           From Shop to Schoolroom in Minutes
         </h2>
-        <p class="mt-4 text-lg max-w-xl mx-auto" style="color: oklch(0.40 0.04 60); font-family: var(--font-body);">
-          No waiting for shipping. No membership gates. Just instant, beautiful resources ready to print.
+        <p class="mt-4 text-lg max-w-xl mx-auto" style="font-family: 'Lora', serif; color: #5C5240; line-height: 1.75;">
+          No waiting for shipping. No membership gates. Just beautiful resources ready to print and use today.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
 
         <!-- Step 1 -->
-        <div class="relative rounded-3xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-             style="background: white; border: 2px solid oklch(0.93 0.020 60);">
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl"
-               style="background: oklch(0.93 0.05 25);">🛍️</div>
-          <div class="absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white text-lg"
-               style="background: oklch(0.60 0.18 25);">1</div>
-          <h3 class="font-display font-semibold text-xl mb-3" style="color: oklch(0.22 0.07 255);">Pick Your Pack</h3>
-          <p class="text-base leading-relaxed" style="color: oklch(0.45 0.04 60); font-family: var(--font-body);">
-            Browse by age, subject, or season. Every pack is beautifully designed and curriculum-aligned.
+        <div class="relative p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+             style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 12px rgba(92,122,78,0.08);">
+          <div class="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center text-3xl"
+               style="background: #F0CEBF;">🧺</div>
+          <div class="absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-lg"
+               style="background: #C4735A; font-family: 'Playfair Display', serif;">1</div>
+          <h3 class="font-bold text-xl mb-3" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Pick Your Pack</h3>
+          <p class="text-base leading-relaxed" style="font-family: 'Lora', serif; color: #5C5240;">
+            Browse by age, subject, or season. Every pack is illustrated and thoughtfully designed for real homeschool days.
           </p>
         </div>
 
         <!-- Step 2 -->
-        <div class="relative rounded-3xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-             style="background: white; border: 2px solid oklch(0.93 0.020 60);">
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl"
-               style="background: oklch(0.95 0.07 85);">⚡</div>
-          <div class="absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white text-lg"
-               style="background: oklch(0.78 0.17 85); color: oklch(0.22 0.07 255);">2</div>
-          <h3 class="font-display font-semibold text-xl mb-3" style="color: oklch(0.22 0.07 255);">Download Instantly</h3>
-          <p class="text-base leading-relaxed" style="color: oklch(0.45 0.04 60); font-family: var(--font-body);">
-            Checkout takes 60 seconds. Your PDF arrives in your inbox immediately — no account required.
+        <div class="relative p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+             style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 12px rgba(92,122,78,0.08);">
+          <div class="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center text-3xl"
+               style="background: #D8EAF3;">📬</div>
+          <div class="absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-lg"
+               style="background: #C4735A; font-family: 'Playfair Display', serif;">2</div>
+          <h3 class="font-bold text-xl mb-3" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Download Instantly</h3>
+          <p class="text-base leading-relaxed" style="font-family: 'Lora', serif; color: #5C5240;">
+            Checkout takes 60 seconds. Your PDF lands in your inbox right away — no account required, no waiting.
           </p>
         </div>
 
         <!-- Step 3 -->
-        <div class="relative rounded-3xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-             style="background: white; border: 2px solid oklch(0.93 0.020 60);">
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl"
-               style="background: oklch(0.92 0.06 185);">🖨️</div>
-          <div class="absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white text-lg"
-               style="background: oklch(0.72 0.12 185);">3</div>
-          <h3 class="font-display font-semibold text-xl mb-3" style="color: oklch(0.22 0.07 255);">Print &amp; Play!</h3>
-          <p class="text-base leading-relaxed" style="color: oklch(0.45 0.04 60); font-family: var(--font-body);">
-            Print at home or at any copy shop. Re-print anytime — it's yours forever.
+        <div class="relative p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+             style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 12px rgba(92,122,78,0.08);">
+          <div class="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center text-3xl"
+               style="background: #EEF3EB;">🖨️</div>
+          <div class="absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-lg"
+               style="background: #C4735A; font-family: 'Playfair Display', serif;">3</div>
+          <h3 class="font-bold text-xl mb-3" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Print &amp; Learn!</h3>
+          <p class="text-base leading-relaxed" style="font-family: 'Lora', serif; color: #5C5240;">
+            Print at home or any copy shop. Re-print as many times as you need — it's yours to keep forever.
           </p>
         </div>
 
@@ -171,31 +192,30 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════════
-       PRODUCTS — Colorful grid on cream, with sticker-badge cards
-  ═══════════════════════════════════════════════════════════════════ -->
-  <section id="products" style="background: oklch(0.97 0.018 60); position: relative; overflow: hidden;">
+  <!-- Gentle hills divider: parchment → sage-green products bg -->
+  <div style="line-height: 0; display: block; background: #F5EFE0; margin-bottom: -2px;">
+    <svg viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
+      <path d="M0 0 C160 64 340 18 540 46 C720 72 900 22 1100 50 C1240 68 1360 28 1440 44 L1440 64 L0 64 Z" fill="#EEF3EB"/>
+    </svg>
+  </div>
 
-    <!-- Top wave -->
-    <div class="leading-none" style="line-height: 0; margin-top: -2px;">
-      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:40px; display:block;">
-        <path d="M0 0 C360 40 1080 0 1440 30 L1440 0 L0 0 Z" fill="oklch(0.985 0.012 60)"/>
-      </svg>
-    </div>
+  <!-- ═══════════════════════════════════════════════════════════════════
+       PRODUCTS — Warm cream, illustrated cards, earthy borders
+  ═══════════════════════════════════════════════════════════════════ -->
+  <section id="products" style="background: #EEF3EB; position: relative; overflow: hidden;">
 
     <div class="py-16 md:py-24">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center mb-14">
-          <span class="inline-block px-4 py-1.5 rounded-full text-sm font-semibold font-display mb-4"
-                style="background: oklch(0.92 0.06 185); color: oklch(0.44 0.12 185);">
-            🎒 Curriculum Packs
+          <span class="inline-block px-4 py-1.5 mb-4" style="font-family: 'Caveat', cursive; font-size: 1.2rem; font-weight: 700; color: #5C7A4E;">
+            🌿 Curriculum Packs
           </span>
-          <h2 class="font-display font-bold" style="font-size: clamp(2rem, 5vw, 3rem); color: oklch(0.22 0.07 255);">
-            Learning That Looks as Good as It Feels
+          <h2 class="font-bold" style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: #2F4A35; letter-spacing: -0.01em;">
+            Learning That Feels Like Home
           </h2>
-          <p class="mt-4 text-lg max-w-2xl mx-auto" style="color: oklch(0.40 0.04 60); font-family: var(--font-body);">
-            Every pack is secular-friendly, age-leveled, and stuffed with activities kids actually want to do.
+          <p class="mt-4 text-lg max-w-2xl mx-auto" style="font-family: 'Lora', serif; color: #5C5240; line-height: 1.75;">
+            Each pack is age-leveled, faith-neutral, and full of activities kids actually want to sit down and do.
           </p>
         </div>
 
@@ -203,171 +223,171 @@ import Base from '../layouts/Base.astro';
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
           <!-- Card 1 — Ocean Unit Study -->
-          <div class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-               style="background: white; border: 2px solid oklch(0.93 0.020 60);">
+          <div class="group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+               style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 14px rgba(92,122,78,0.09);">
             <div class="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
-                 style="background: linear-gradient(135deg, oklch(0.92 0.06 185) 0%, oklch(0.85 0.08 210) 100%);">
+                 style="background: linear-gradient(135deg, #D8EAF3 0%, #B5D4E6 100%);">
               🌊
               <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 70% 30%, white 0%, transparent 60%);"></div>
-              <!-- Sticker badge -->
-              <div class="absolute -top-2 -right-2 w-14 h-14 rounded-full flex items-center justify-center text-xl font-display font-bold shadow-lg"
-                   style="background: oklch(0.85 0.17 85); color: oklch(0.22 0.07 255);">K-2</div>
+              <!-- Age badge -->
+              <div class="absolute top-3 right-3 px-2.5 py-1 text-xs font-bold text-white"
+                   style="background: #C4735A; border-radius: 8px; font-family: 'Caveat', cursive; font-size: 0.9rem;">K-2</div>
             </div>
             <div class="p-6">
               <div class="flex items-start justify-between gap-3 mb-2">
-                <h3 class="font-display font-semibold text-lg leading-snug" style="color: oklch(0.22 0.07 255);">
+                <h3 class="font-bold text-lg leading-snug" style="font-family: 'Playfair Display', serif; color: #2F4A35;">
                   Ocean World Unit Study
                 </h3>
-                <span class="shrink-0 text-base font-display font-bold" style="color: oklch(0.60 0.18 25);">$18</span>
+                <span class="shrink-0 font-bold" style="font-family: 'Playfair Display', serif; color: #5C7A4E;">$18</span>
               </div>
-              <p class="text-sm leading-relaxed mb-5" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">
+              <p class="text-sm leading-relaxed mb-5" style="font-family: 'Lora', serif; color: #5C5240;">
                 Dive deep into marine science with 40+ pages of games, crafts, reading passages, and math activities.
               </p>
-              <a href="#cta" class="block text-center py-2.5 rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-md"
-                 style="background: oklch(0.72 0.12 185); color: white;">
+              <a href="#cta" class="block text-center py-2.5 text-sm font-bold transition-all duration-200 hover:opacity-90"
+                 style="background: #7BA7BC; color: white; border-radius: 10px; font-family: 'Playfair Display', serif;">
                 Add to Cart →
               </a>
             </div>
           </div>
 
           <!-- Card 2 — Seasons Bundle (FEATURED) -->
-          <div class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:scale-105 sm:-mt-2"
-               style="background: white; border: 3px solid oklch(0.60 0.18 25); box-shadow: 0 8px 40px oklch(0.60 0.18 25 / 0.15);">
+          <div class="group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:scale-105 sm:-mt-2"
+               style="background: #FDFAF5; border: 2px solid #5C7A4E; border-radius: 14px; box-shadow: 0 8px 32px rgba(92,122,78,0.18);">
             <!-- Best Seller ribbon -->
-            <div class="absolute top-5 left-0 px-4 py-1.5 text-xs font-display font-bold rounded-r-full z-10"
-                 style="background: oklch(0.60 0.18 25); color: white;">
-              ⭐ Best Seller
+            <div class="absolute top-4 left-0 px-4 py-1.5 text-xs font-bold rounded-r-full z-10"
+                 style="background: #5C7A4E; color: #F5EFE0; font-family: 'Caveat', cursive; font-size: 0.95rem;">
+              ✦ Best Seller
             </div>
             <div class="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
-                 style="background: linear-gradient(135deg, oklch(0.93 0.05 25) 0%, oklch(0.92 0.08 50) 100%);">
+                 style="background: linear-gradient(135deg, #EEF3EB 0%, #D6E4CF 100%);">
               🌸
-              <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 30% 70%, white 0%, transparent 60%);"></div>
-              <div class="absolute -top-2 -right-2 w-14 h-14 rounded-full flex items-center justify-center text-xl font-display font-bold shadow-lg"
-                   style="background: oklch(0.60 0.18 25); color: white;">K-3</div>
+              <div class="absolute inset-0 opacity-15" style="background: radial-gradient(circle at 30% 70%, white 0%, transparent 60%);"></div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 text-xs font-bold"
+                   style="background: #5C7A4E; color: #F5EFE0; border-radius: 8px; font-family: 'Caveat', cursive; font-size: 0.9rem;">K-3</div>
             </div>
             <div class="p-6">
               <div class="flex items-start justify-between gap-3 mb-2">
-                <h3 class="font-display font-semibold text-lg leading-snug" style="color: oklch(0.22 0.07 255);">
+                <h3 class="font-bold text-lg leading-snug" style="font-family: 'Playfair Display', serif; color: #2F4A35;">
                   Four Seasons Mega Bundle
                 </h3>
                 <div class="text-right shrink-0">
-                  <span class="block text-xs line-through" style="color: oklch(0.60 0.04 60);">$72</span>
-                  <span class="text-base font-display font-bold" style="color: oklch(0.60 0.18 25);">$39</span>
+                  <span class="block text-xs line-through" style="color: #9E9070;">$72</span>
+                  <span class="font-bold" style="font-family: 'Playfair Display', serif; color: #5C7A4E;">$39</span>
                 </div>
               </div>
-              <p class="text-sm leading-relaxed mb-5" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">
+              <p class="text-sm leading-relaxed mb-5" style="font-family: 'Lora', serif; color: #5C5240;">
                 A full year of seasonal learning — 150+ pages across science, literacy, math, and art for every season.
               </p>
-              <a href="#cta" class="block text-center py-2.5 rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-md hover:scale-105"
-                 style="background: oklch(0.60 0.18 25); color: white;">
+              <a href="#cta" class="block text-center py-2.5 text-sm font-bold transition-all duration-200 hover:opacity-90 hover:shadow-md"
+                 style="background: #5C7A4E; color: #F5EFE0; border-radius: 10px; font-family: 'Playfair Display', serif;">
                 Get the Bundle →
               </a>
             </div>
           </div>
 
           <!-- Card 3 — Alphabet Adventure -->
-          <div class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-               style="background: white; border: 2px solid oklch(0.93 0.020 60);">
+          <div class="group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+               style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 14px rgba(92,122,78,0.09);">
             <div class="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
-                 style="background: linear-gradient(135deg, oklch(0.95 0.07 85) 0%, oklch(0.90 0.10 70) 100%);">
+                 style="background: linear-gradient(135deg, #F5E8C0 0%, #EDD394 100%);">
               🔤
               <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 50% 50%, white 0%, transparent 60%);"></div>
-              <div class="absolute -top-2 -right-2 w-14 h-14 rounded-full flex items-center justify-center text-xl font-display font-bold shadow-lg"
-                   style="background: oklch(0.85 0.17 85); color: oklch(0.22 0.07 255);">PreK</div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 text-xs font-bold"
+                   style="background: #C4735A; color: white; border-radius: 8px; font-family: 'Caveat', cursive; font-size: 0.9rem;">PreK</div>
             </div>
             <div class="p-6">
               <div class="flex items-start justify-between gap-3 mb-2">
-                <h3 class="font-display font-semibold text-lg leading-snug" style="color: oklch(0.22 0.07 255);">
+                <h3 class="font-bold text-lg leading-snug" style="font-family: 'Playfair Display', serif; color: #2F4A35;">
                   Alphabet Adventure Pack
                 </h3>
-                <span class="shrink-0 text-base font-display font-bold" style="color: oklch(0.60 0.18 25);">$15</span>
+                <span class="shrink-0 font-bold" style="font-family: 'Playfair Display', serif; color: #5C7A4E;">$15</span>
               </div>
-              <p class="text-sm leading-relaxed mb-5" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">
+              <p class="text-sm leading-relaxed mb-5" style="font-family: 'Lora', serif; color: #5C5240;">
                 26 playful letter activities, tracing sheets, phonics games, and mini-books for early learners.
               </p>
-              <a href="#cta" class="block text-center py-2.5 rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-md"
-                 style="background: oklch(0.85 0.17 85); color: oklch(0.22 0.07 255);">
+              <a href="#cta" class="block text-center py-2.5 text-sm font-bold transition-all duration-200 hover:opacity-90"
+                 style="background: #D4A843; color: #2F4A35; border-radius: 10px; font-family: 'Playfair Display', serif;">
                 Add to Cart →
               </a>
             </div>
           </div>
 
           <!-- Card 4 — Rainforest -->
-          <div class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-               style="background: white; border: 2px solid oklch(0.93 0.020 60);">
+          <div class="group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+               style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 14px rgba(92,122,78,0.09);">
             <div class="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
-                 style="background: linear-gradient(135deg, oklch(0.90 0.10 145) 0%, oklch(0.85 0.10 165) 100%);">
+                 style="background: linear-gradient(135deg, #D6E4CF 0%, #BACDB1 100%);">
               🦜
               <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 20% 80%, white 0%, transparent 60%);"></div>
-              <div class="absolute -top-2 -right-2 w-14 h-14 rounded-full flex items-center justify-center text-xl font-display font-bold shadow-lg"
-                   style="background: oklch(0.72 0.12 185); color: white;">Gr 2-4</div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 text-xs font-bold"
+                   style="background: #5C7A4E; color: #F5EFE0; border-radius: 8px; font-family: 'Caveat', cursive; font-size: 0.9rem;">Gr 2-4</div>
             </div>
             <div class="p-6">
               <div class="flex items-start justify-between gap-3 mb-2">
-                <h3 class="font-display font-semibold text-lg leading-snug" style="color: oklch(0.22 0.07 255);">
+                <h3 class="font-bold text-lg leading-snug" style="font-family: 'Playfair Display', serif; color: #2F4A35;">
                   Rainforest Explorer Study
                 </h3>
-                <span class="shrink-0 text-base font-display font-bold" style="color: oklch(0.60 0.18 25);">$22</span>
+                <span class="shrink-0 font-bold" style="font-family: 'Playfair Display', serif; color: #5C7A4E;">$22</span>
               </div>
-              <p class="text-sm leading-relaxed mb-5" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">
-                Explore ecosystems, animal adaptations, and geography through 50+ colorful pages of hands-on work.
+              <p class="text-sm leading-relaxed mb-5" style="font-family: 'Lora', serif; color: #5C5240;">
+                Explore ecosystems, animal adaptations, and geography through 50+ pages of hands-on work.
               </p>
-              <a href="#cta" class="block text-center py-2.5 rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-md"
-                 style="background: oklch(0.64 0.12 185); color: white;">
+              <a href="#cta" class="block text-center py-2.5 text-sm font-bold transition-all duration-200 hover:opacity-90"
+                 style="background: #5C7A4E; color: #F5EFE0; border-radius: 10px; font-family: 'Playfair Display', serif;">
                 Add to Cart →
               </a>
             </div>
           </div>
 
           <!-- Card 5 — Multiplication -->
-          <div class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-               style="background: white; border: 2px solid oklch(0.93 0.020 60);">
+          <div class="group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+               style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 14px rgba(92,122,78,0.09);">
             <div class="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
-                 style="background: linear-gradient(135deg, oklch(0.93 0.06 280) 0%, oklch(0.88 0.10 295) 100%);">
+                 style="background: linear-gradient(135deg, #E5E2EF 0%, #C8C2DF 100%);">
               🔢
               <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 80% 20%, white 0%, transparent 60%);"></div>
-              <div class="absolute -top-2 -right-2 w-14 h-14 rounded-full flex items-center justify-center text-xl font-display font-bold shadow-lg"
-                   style="background: oklch(0.85 0.17 85); color: oklch(0.22 0.07 255);">Gr 3-5</div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 text-xs font-bold"
+                   style="background: #9B8EB5; color: white; border-radius: 8px; font-family: 'Caveat', cursive; font-size: 0.9rem;">Gr 3-5</div>
             </div>
             <div class="p-6">
               <div class="flex items-start justify-between gap-3 mb-2">
-                <h3 class="font-display font-semibold text-lg leading-snug" style="color: oklch(0.22 0.07 255);">
+                <h3 class="font-bold text-lg leading-snug" style="font-family: 'Playfair Display', serif; color: #2F4A35;">
                   Multiplication Mastery Kit
                 </h3>
-                <span class="shrink-0 text-base font-display font-bold" style="color: oklch(0.60 0.18 25);">$19</span>
+                <span class="shrink-0 font-bold" style="font-family: 'Playfair Display', serif; color: #5C7A4E;">$19</span>
               </div>
-              <p class="text-sm leading-relaxed mb-5" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">
-                Games, skip-counting songs, visual arrays, and practice sheets that make times tables click — finally.
+              <p class="text-sm leading-relaxed mb-5" style="font-family: 'Lora', serif; color: #5C5240;">
+                Games, skip-counting songs, visual arrays, and practice sheets that make times tables finally click.
               </p>
-              <a href="#cta" class="block text-center py-2.5 rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-md"
-                 style="background: oklch(0.55 0.14 280); color: white;">
+              <a href="#cta" class="block text-center py-2.5 text-sm font-bold transition-all duration-200 hover:opacity-90"
+                 style="background: #9B8EB5; color: white; border-radius: 10px; font-family: 'Playfair Display', serif;">
                 Add to Cart →
               </a>
             </div>
           </div>
 
           <!-- Card 6 — Space Unit -->
-          <div class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-               style="background: white; border: 2px solid oklch(0.93 0.020 60);">
+          <div class="group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+               style="background: #FDFAF5; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 14px rgba(92,122,78,0.09);">
             <div class="h-44 flex items-center justify-center text-6xl relative overflow-hidden"
-                 style="background: linear-gradient(135deg, oklch(0.88 0.07 240) 0%, oklch(0.82 0.10 255) 100%);">
+                 style="background: linear-gradient(135deg, #D8EAF3 0%, #7BA7BC 100%);">
               🚀
               <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 60% 40%, white 0%, transparent 60%);"></div>
-              <div class="absolute -top-2 -right-2 w-14 h-14 rounded-full flex items-center justify-center text-xl font-display font-bold shadow-lg"
-                   style="background: oklch(0.60 0.18 25); color: white;">Gr 4-6</div>
+              <div class="absolute top-3 right-3 px-2.5 py-1 text-xs font-bold"
+                   style="background: #477890; color: white; border-radius: 8px; font-family: 'Caveat', cursive; font-size: 0.9rem;">Gr 4-6</div>
             </div>
             <div class="p-6">
               <div class="flex items-start justify-between gap-3 mb-2">
-                <h3 class="font-display font-semibold text-lg leading-snug" style="color: oklch(0.22 0.07 255);">
+                <h3 class="font-bold text-lg leading-snug" style="font-family: 'Playfair Display', serif; color: #2F4A35;">
                   Space &amp; Solar System Pack
                 </h3>
-                <span class="shrink-0 text-base font-display font-bold" style="color: oklch(0.60 0.18 25);">$24</span>
+                <span class="shrink-0 font-bold" style="font-family: 'Playfair Display', serif; color: #5C7A4E;">$24</span>
               </div>
-              <p class="text-sm leading-relaxed mb-5" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">
+              <p class="text-sm leading-relaxed mb-5" style="font-family: 'Lora', serif; color: #5C5240;">
                 Planets, constellations, moon phases, and astronaut biographies — 60+ pages of stellar learning.
               </p>
-              <a href="#cta" class="block text-center py-2.5 rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-md"
-                 style="background: oklch(0.44 0.13 255); color: white;">
+              <a href="#cta" class="block text-center py-2.5 text-sm font-bold transition-all duration-200 hover:opacity-90"
+                 style="background: #477890; color: white; border-radius: 10px; font-family: 'Playfair Display', serif;">
                 Add to Cart →
               </a>
             </div>
@@ -377,8 +397,8 @@ import Base from '../layouts/Base.astro';
 
         <!-- View all link -->
         <div class="text-center mt-12">
-          <a href="#cta" class="inline-flex items-center gap-2 text-base font-display font-semibold transition-all duration-200 hover:gap-3"
-             style="color: oklch(0.60 0.18 25);">
+          <a href="#cta" class="inline-flex items-center gap-2 text-base font-bold transition-all duration-200 hover:gap-3"
+             style="font-family: 'Playfair Display', serif; color: #5C7A4E;">
             Browse all 40+ packs in the shop
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -387,76 +407,85 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <!-- Bottom wave into teal -->
-    <div class="leading-none" style="line-height: 0;">
-      <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:50px; display:block;">
-        <path d="M0 50 C320 10 720 50 1080 20 C1200 12 1320 30 1440 15 L1440 50 L0 50 Z" fill="oklch(0.92 0.06 185)"/>
+    <!-- Hills divider into why section -->
+    <div style="line-height: 0;">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:60px; display:block;">
+        <path d="M0 60 C200 20 400 55 600 32 C800 9 1000 45 1200 28 C1320 18 1390 38 1440 30 L1440 60 L0 60 Z" fill="#E8F0E4"/>
       </svg>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       WHY BRIGHT NEST — Teal feature band
+       WHY HOMEGROWN — Pressed-herb sage, botanical feature cards
   ═══════════════════════════════════════════════════════════════════ -->
-  <section id="why" style="background: oklch(0.92 0.06 185);">
+  <section id="why" style="background: #E8F0E4;">
     <div class="py-20 md:py-28">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="text-center mb-14">
-          <h2 class="font-display font-bold" style="font-size: clamp(2rem, 5vw, 3rem); color: oklch(0.15 0.07 200);">
-            Why Homeschool Families Choose Homegrown
-          </h2>
-          <p class="mt-4 text-lg max-w-xl mx-auto" style="color: oklch(0.28 0.06 190); font-family: var(--font-body);">
-            The homeschool market is full of boring worksheets and faith-only curricula. We made something different.
-          </p>
+        <!-- Asymmetric layout: heading left-aligned, pull-quote floats right on desktop -->
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div class="max-w-xl">
+            <span class="block mb-3" style="font-family: 'Caveat', cursive; font-size: 1.2rem; font-weight: 700; color: #C4735A;">❧ Made different, on purpose</span>
+            <h2 class="font-bold" style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: #2F4A35; letter-spacing: -0.01em; line-height: 1.15;">
+              Worksheets should feel<br>
+              <em style="font-style: italic; color: #5C7A4E;">like a gift, not a chore</em>
+            </h2>
+          </div>
+          <!-- Pull-quote: floats right, adds visual tension -->
+          <blockquote class="hidden md:block max-w-xs p-5 shrink-0" style="background: white; border-radius: 12px; border-left: 4px solid #D4A843; box-shadow: 0 2px 12px rgba(92,122,78,0.09);">
+            <p style="font-family: 'Lora', serif; font-style: italic; color: #5C5240; font-size: 0.95rem; line-height: 1.7;">
+              "The dull-worksheet era of homeschooling is over. Homegrown materials belong on your fridge."
+            </p>
+            <footer class="mt-3" style="font-family: 'Caveat', cursive; font-size: 0.95rem; color: #9E9070;">— a parent of five 🌱</footer>
+          </blockquote>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
 
-          <div class="flex gap-5 items-start p-6 rounded-3xl"
-               style="background: white / 0.5; background-color: rgba(255,255,255,0.55); backdrop-filter: blur(10px);">
-            <div class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
-                 style="background: oklch(0.85 0.17 85);">🎨</div>
+          <div class="flex gap-5 items-start p-6 animate-slide-left"
+               style="background: white; border-radius: 12px; border-left: 4px solid #5C7A4E; box-shadow: 0 2px 12px rgba(92,122,78,0.08);">
+            <div class="shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl"
+                 style="background: #EEF3EB; min-width: 3.5rem;">🎨</div>
             <div>
-              <h3 class="font-display font-semibold text-lg mb-1" style="color: oklch(0.15 0.07 200);">Visually Joyful Design</h3>
-              <p class="text-base leading-relaxed" style="color: oklch(0.32 0.06 190); font-family: var(--font-body);">
-                Every page is illustrated, colorful, and crafted to feel special — not like a photocopy from a textbook publisher.
+              <h3 class="font-bold text-lg mb-1" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Illustrated, Not Photocopied</h3>
+              <p class="text-base leading-relaxed" style="font-family: 'Lora', serif; color: #5C5240;">
+                Every page is hand-crafted to feel special — the kind of thing your kid pins to their bedroom wall long after the lesson ends.
               </p>
             </div>
           </div>
 
-          <div class="flex gap-5 items-start p-6 rounded-3xl"
-               style="background-color: rgba(255,255,255,0.55); backdrop-filter: blur(10px);">
-            <div class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
-                 style="background: oklch(0.93 0.05 25);">🌍</div>
+          <div class="flex gap-5 items-start p-6 animate-slide-left delay-100"
+               style="background: white; border-radius: 12px; border-left: 4px solid #5C7A4E; box-shadow: 0 2px 12px rgba(92,122,78,0.08);">
+            <div class="shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl"
+                 style="background: #EEF3EB; min-width: 3.5rem;">🌾</div>
             <div>
-              <h3 class="font-display font-semibold text-lg mb-1" style="color: oklch(0.15 0.07 200);">Secular &amp; Inclusive</h3>
-              <p class="text-base leading-relaxed" style="color: oklch(0.32 0.06 190); font-family: var(--font-body);">
-                All content is faith-neutral and celebrates diverse families. Every child sees themselves in the materials.
+              <h3 class="font-bold text-lg mb-1" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Faith-Neutral &amp; Family-Inclusive</h3>
+              <p class="text-base leading-relaxed" style="font-family: 'Lora', serif; color: #5C5240;">
+                No religious assumptions. Every family and every background is welcome. Your kids see themselves in every page.
               </p>
             </div>
           </div>
 
-          <div class="flex gap-5 items-start p-6 rounded-3xl"
-               style="background-color: rgba(255,255,255,0.55); backdrop-filter: blur(10px);">
-            <div class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
-                 style="background: oklch(0.92 0.06 185);">⚡</div>
+          <div class="flex gap-5 items-start p-6 animate-slide-left delay-200"
+               style="background: white; border-radius: 12px; border-left: 4px solid #5C7A4E; box-shadow: 0 2px 12px rgba(92,122,78,0.08);">
+            <div class="shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl"
+                 style="background: #EEF3EB; min-width: 3.5rem;">⚡</div>
             <div>
-              <h3 class="font-display font-semibold text-lg mb-1" style="color: oklch(0.15 0.07 200);">Ready in 60 Seconds</h3>
-              <p class="text-base leading-relaxed" style="color: oklch(0.32 0.06 190); font-family: var(--font-body);">
-                No subscriptions, no accounts. Buy, download, print. Re-use forever. Perfect for parents who need to move fast.
+              <h3 class="font-bold text-lg mb-1" style="font-family: 'Playfair Display', serif; color: #2F4A35;">In Your Hands in 60 Seconds</h3>
+              <p class="text-base leading-relaxed" style="font-family: 'Lora', serif; color: #5C5240;">
+                No subscriptions. No accounts. Buy it once, print it forever. Perfect for the morning you need something right now.
               </p>
             </div>
           </div>
 
-          <div class="flex gap-5 items-start p-6 rounded-3xl"
-               style="background-color: rgba(255,255,255,0.55); backdrop-filter: blur(10px);">
-            <div class="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
-                 style="background: oklch(0.93 0.06 280);">🏆</div>
+          <div class="flex gap-5 items-start p-6 animate-slide-left delay-300"
+               style="background: white; border-radius: 12px; border-left: 4px solid #5C7A4E; box-shadow: 0 2px 12px rgba(92,122,78,0.08);">
+            <div class="shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-2xl"
+                 style="background: #EEF3EB; min-width: 3.5rem;">🏆</div>
             <div>
-              <h3 class="font-display font-semibold text-lg mb-1" style="color: oklch(0.15 0.07 200);">Kids Actually Love It</h3>
-              <p class="text-base leading-relaxed" style="color: oklch(0.32 0.06 190); font-family: var(--font-body);">
-                We design with kids in mind — activities that spark curiosity, not dread. Parents tell us their kids ask for more.
+              <h3 class="font-bold text-lg mb-1" style="font-family: 'Playfair Display', serif; color: #2F4A35;">They'll Ask for School on Saturdays</h3>
+              <p class="text-base leading-relaxed" style="font-family: 'Lora', serif; color: #5C5240;">
+                Activities designed to spark curiosity, not dread. Parents write to us: "My kids fought over who got to do it first."
               </p>
             </div>
           </div>
@@ -465,76 +494,83 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <!-- Wave into cream -->
-    <div class="leading-none" style="line-height: 0;">
-      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:48px; display:block;">
-        <path d="M0 0 C480 48 960 0 1440 32 L1440 48 L0 48 Z" fill="oklch(0.985 0.012 60)"/>
+    <!-- Hills divider into testimonials -->
+    <div style="line-height: 0;">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:60px; display:block;">
+        <path d="M0 0 C300 60 600 20 900 50 C1100 70 1280 30 1440 44 L1440 60 L0 60 Z" fill="#F5EFE0"/>
       </svg>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       TESTIMONIALS — Warm cream, 3 real parent quotes
+       TESTIMONIALS — Parchment, quote cards with straw gold accents
   ═══════════════════════════════════════════════════════════════════ -->
-  <section id="testimonials" class="py-20 md:py-28" style="background: oklch(0.985 0.012 60);">
+  <section id="testimonials" class="py-20 md:py-28" style="background: #F5EFE0;">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="text-center mb-14">
-        <span class="inline-block px-4 py-1.5 rounded-full text-sm font-semibold font-display mb-4"
-              style="background: oklch(0.95 0.07 85); color: oklch(0.50 0.14 75);">
-          💬 Parent Stories
+        <span class="inline-block mb-3" style="font-family: 'Caveat', cursive; font-size: 1.15rem; font-weight: 700; color: #C4735A;">
+          ❧ From the schoolroom floor
         </span>
-        <h2 class="font-display font-bold" style="font-size: clamp(2rem, 5vw, 3rem); color: oklch(0.22 0.07 255);">
-          Real Families, Real Results
+        <h2 class="font-bold" style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: #2F4A35; letter-spacing: -0.01em;">
+          What Homeschool Families<br>
+          <em style="font-style: italic; color: #5C7A4E;">are saying around the table</em>
         </h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
 
-        <div class="rounded-3xl p-8 relative"
-             style="background: white; border: 2px solid oklch(0.93 0.020 60);">
-          <div class="text-4xl mb-5">⭐⭐⭐⭐⭐</div>
-          <p class="text-base leading-relaxed mb-6 italic" style="color: oklch(0.35 0.04 60); font-family: var(--font-body);">
-            "My 7-year-old actually asked to do school on a Saturday after we started the Ocean unit. I cried happy tears."
+        <!-- Testimonial 1 -->
+        <div class="p-8 relative"
+             style="background: white; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 14px rgba(92,122,78,0.07);">
+          <!-- Decorative quotation mark -->
+          <div class="absolute top-4 right-6" style="font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1; color: #D4A843; opacity: 0.35; font-weight: 900;">"</div>
+          <div class="mb-4" style="color: #D4A843; font-size: 1.1rem;">⭐⭐⭐⭐⭐</div>
+          <p class="text-base leading-relaxed mb-6 italic" style="font-family: 'Lora', serif; color: #3D3628; font-style: italic;">
+            "My 7-year-old asked to do school on a Saturday after we started the Ocean unit. I cried happy tears."
           </p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white"
-                 style="background: oklch(0.72 0.12 185);">K</div>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white shrink-0"
+                 style="background: #7BA7BC; font-family: 'Playfair Display', serif;">K</div>
             <div>
-              <p class="font-display font-semibold text-sm" style="color: oklch(0.22 0.07 255);">Kara M.</p>
-              <p class="text-xs" style="color: oklch(0.55 0.03 60); font-family: var(--font-body);">Homeschool mom · Oregon</p>
+              <p class="font-bold text-sm" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Kara M.</p>
+              <p class="text-xs" style="font-family: 'Lora', serif; color: #9E9070;">Homeschool mom · Oregon</p>
             </div>
           </div>
         </div>
 
-        <div class="rounded-3xl p-8 relative"
-             style="background: oklch(0.93 0.05 25); border: 2px solid oklch(0.87 0.09 25);">
-          <div class="text-4xl mb-5">⭐⭐⭐⭐⭐</div>
-          <p class="text-base leading-relaxed mb-6 italic" style="color: oklch(0.28 0.07 25); font-family: var(--font-body);">
-            "I've wasted hundreds of dollars on boring curricula. Homegrown is the first one my kids fight over who gets to do it first."
+        <!-- Testimonial 2 (featured) -->
+        <div class="p-8 relative"
+             style="background: #EEF3EB; border: 1.5px solid #BACDB1; border-radius: 14px; box-shadow: 0 4px 20px rgba(92,122,78,0.14);">
+          <div class="absolute top-4 right-6" style="font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1; color: #D4A843; opacity: 0.35; font-weight: 900;">"</div>
+          <div class="mb-4" style="color: #D4A843; font-size: 1.1rem;">⭐⭐⭐⭐⭐</div>
+          <p class="text-base leading-relaxed mb-6" style="font-family: 'Lora', serif; color: #2F4A35; font-style: italic;">
+            "I've tried so many curricula. Homegrown is the first one my kids fight over who gets to do it first."
           </p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white"
-                 style="background: oklch(0.60 0.18 25);">T</div>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white shrink-0"
+                 style="background: #C4735A; font-family: 'Playfair Display', serif;">T</div>
             <div>
-              <p class="font-display font-semibold text-sm" style="color: oklch(0.22 0.07 255);">Tanya R.</p>
-              <p class="text-xs" style="color: oklch(0.44 0.08 25); font-family: var(--font-body);">Homeschool mom · Texas</p>
+              <p class="font-bold text-sm" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Tanya R.</p>
+              <p class="text-xs" style="font-family: 'Lora', serif; color: #6E9160;">Homeschool mom · Texas</p>
             </div>
           </div>
         </div>
 
-        <div class="rounded-3xl p-8 relative"
-             style="background: white; border: 2px solid oklch(0.93 0.020 60);">
-          <div class="text-4xl mb-5">⭐⭐⭐⭐⭐</div>
-          <p class="text-base leading-relaxed mb-6 italic" style="color: oklch(0.35 0.04 60); font-family: var(--font-body);">
+        <!-- Testimonial 3 -->
+        <div class="p-8 relative"
+             style="background: white; border: 1.5px solid #D9CEB2; border-radius: 14px; box-shadow: 0 2px 14px rgba(92,122,78,0.07);">
+          <div class="absolute top-4 right-6" style="font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1; color: #D4A843; opacity: 0.35; font-weight: 900;">"</div>
+          <div class="mb-4" style="color: #D4A843; font-size: 1.1rem;">⭐⭐⭐⭐⭐</div>
+          <p class="text-base leading-relaxed mb-6 italic" style="font-family: 'Lora', serif; color: #3D3628; font-style: italic;">
             "As a secular family, finding quality content that's inclusive AND beautiful was nearly impossible — until Homegrown."
           </p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white"
-                 style="background: oklch(0.55 0.14 280);">J</div>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white shrink-0"
+                 style="background: #9B8EB5; font-family: 'Playfair Display', serif;">J</div>
             <div>
-              <p class="font-display font-semibold text-sm" style="color: oklch(0.22 0.07 255);">Jordan L.</p>
-              <p class="text-xs" style="color: oklch(0.55 0.03 60); font-family: var(--font-body);">Homeschool parent · Vermont</p>
+              <p class="font-bold text-sm" style="font-family: 'Playfair Display', serif; color: #2F4A35;">Jordan L.</p>
+              <p class="text-xs" style="font-family: 'Lora', serif; color: #9E9070;">Homeschool parent · Vermont</p>
             </div>
           </div>
         </div>
@@ -544,20 +580,20 @@ import Base from '../layouts/Base.astro';
       <!-- Stats row -->
       <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div class="font-display font-bold" style="font-size: 2.8rem; line-height: 1; color: oklch(0.60 0.18 25);">2,400+</div>
-          <div class="mt-1 text-sm font-semibold" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">Families served</div>
+          <div class="font-bold" style="font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1; color: #5C7A4E;">2,400+</div>
+          <div class="mt-1 text-sm font-semibold" style="font-family: 'Lora', serif; color: #5C5240;">Families served</div>
         </div>
         <div>
-          <div class="font-display font-bold" style="font-size: 2.8rem; line-height: 1; color: oklch(0.64 0.12 185);">40+</div>
-          <div class="mt-1 text-sm font-semibold" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">Curriculum packs</div>
+          <div class="font-bold" style="font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1; color: #7BA7BC;">40+</div>
+          <div class="mt-1 text-sm font-semibold" style="font-family: 'Lora', serif; color: #5C5240;">Curriculum packs</div>
         </div>
         <div>
-          <div class="font-display font-bold" style="font-size: 2.8rem; line-height: 1; color: oklch(0.78 0.17 85);">4.9★</div>
-          <div class="mt-1 text-sm font-semibold" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">Average rating</div>
+          <div class="font-bold" style="font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1; color: #D4A843;">4.9★</div>
+          <div class="mt-1 text-sm font-semibold" style="font-family: 'Lora', serif; color: #5C5240;">Average rating</div>
         </div>
         <div>
-          <div class="font-display font-bold" style="font-size: 2.8rem; line-height: 1; color: oklch(0.55 0.14 280);">Ages 3–12</div>
-          <div class="mt-1 text-sm font-semibold" style="color: oklch(0.48 0.04 60); font-family: var(--font-body);">Every level covered</div>
+          <div class="font-bold" style="font-family: 'Playfair Display', serif; font-size: 2.4rem; line-height: 1; color: #C4735A;">Ages 3–12</div>
+          <div class="mt-1 text-sm font-semibold" style="font-family: 'Lora', serif; color: #5C5240;">Every level covered</div>
         </div>
       </div>
 
@@ -565,53 +601,53 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════════
-       EMAIL CAPTURE / CTA — Sunshine yellow band
+       EMAIL CAPTURE / CTA — Terracotta/dusty rose, warm and welcoming
   ═══════════════════════════════════════════════════════════════════ -->
-  <section id="cta" style="background: oklch(0.85 0.17 85); position: relative; overflow: hidden;">
+  <section id="cta" style="background: #C4735A; position: relative; overflow: hidden;">
 
-    <!-- Top wave -->
-    <div class="leading-none" style="line-height: 0; margin-top: -1px;">
-      <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:48px; display:block;">
-        <path d="M0 48 C360 8 900 48 1440 20 L1440 0 L0 0 Z" fill="oklch(0.985 0.012 60)"/>
+    <!-- Gentle hills top -->
+    <div style="line-height: 0; margin-top: -1px;">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:60px; display:block;">
+        <path d="M0 60 C280 20 560 55 840 30 C1020 14 1240 50 1440 28 L1440 0 L0 0 Z" fill="#F5EFE0"/>
       </svg>
     </div>
 
-    <!-- Decorative dots -->
+    <!-- Subtle decorative botanicals -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div class="absolute top-8 left-8 w-20 h-20 rounded-full opacity-40" style="background: oklch(0.78 0.17 85);"></div>
-      <div class="absolute bottom-8 right-12 w-28 h-28 rounded-full opacity-30" style="background: oklch(0.78 0.17 85);"></div>
-      <div class="absolute top-1/2 right-1/4 w-10 h-10 rounded-full opacity-50" style="background: oklch(0.92 0.10 70);"></div>
-      <div class="absolute top-10 right-1/3 w-6 h-6 rounded-full opacity-60" style="background: oklch(0.60 0.18 25);"></div>
+      <div class="absolute top-10 left-8 opacity-15 text-5xl animate-float" style="animation-delay: 0s; color: #F5EFE0;">🌿</div>
+      <div class="absolute bottom-10 right-12 opacity-15 text-5xl animate-float" style="animation-delay: 1.5s; color: #F5EFE0;">🌾</div>
+      <div class="absolute top-1/2 left-1/4 opacity-10 text-4xl animate-float" style="animation-delay: 0.8s; color: #F5EFE0;">✿</div>
+      <div class="absolute top-8 right-1/4 opacity-10 text-3xl" style="color: #F5EFE0;">✦</div>
     </div>
 
     <div class="relative py-20 md:py-24">
       <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="text-5xl mb-5 animate-wiggle inline-block">🎁</div>
-        <h2 class="font-display font-bold mb-4" style="font-size: clamp(2rem, 5vw, 3rem); color: oklch(0.22 0.07 255);">
+        <div class="text-5xl mb-5 animate-wobble inline-block">🌱</div>
+        <h2 class="font-bold mb-4" style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: white; letter-spacing: -0.01em;">
           Grab a Free Sample Pack First
         </h2>
-        <p class="text-lg mb-8 max-w-lg mx-auto" style="color: oklch(0.30 0.06 70); font-family: var(--font-body);">
-          Join 2,400+ homeschool families. Get a free 12-page activity sampler delivered to your inbox — no credit card ever.
+        <p class="text-lg mb-8 max-w-lg mx-auto" style="font-family: 'Lora', serif; color: rgba(255,255,255,0.88); line-height: 1.75;">
+          Join 2,400+ homeschool families. Get a free 12-page activity sampler delivered to your inbox — no credit card, ever.
         </p>
 
         <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="return false;">
           <input
             type="email"
             placeholder="Your email address"
-            class="flex-1 px-5 py-4 rounded-2xl text-base font-body focus:outline-none"
-            style="background: white; color: oklch(0.22 0.07 255); border: 2px solid transparent; font-family: var(--font-body);"
+            class="flex-1 px-5 py-4 text-base focus:outline-none"
+            style="background: #F5EFE0; color: #2F4A35; border: 2px solid transparent; border-radius: 10px; font-family: 'Lora', serif;"
             aria-label="Email address"
           />
           <button
             type="submit"
-            class="px-7 py-4 rounded-2xl font-display font-bold text-base transition-all duration-200 hover:scale-105 hover:shadow-xl shrink-0"
-            style="background: oklch(0.60 0.18 25); color: white; box-shadow: 0 4px 20px oklch(0.60 0.18 25 / 0.35);"
+            class="px-7 py-4 font-bold text-base transition-all duration-200 hover:opacity-90 hover:shadow-xl shrink-0"
+            style="background: #2F4A35; color: #F5EFE0; border-radius: 10px; font-family: 'Playfair Display', serif; box-shadow: 0 4px 20px rgba(47,74,53,0.30);"
           >
-            Send My Freebie! →
+            Send My Freebie →
           </button>
         </form>
 
-        <p class="mt-4 text-sm" style="color: oklch(0.38 0.08 70); font-family: var(--font-body);">
+        <p class="mt-4 text-sm" style="font-family: 'Lora', serif; color: rgba(255,255,255,0.70);">
           🔒 No spam, ever. Unsubscribe anytime. Freebie arrives instantly.
         </p>
       </div>

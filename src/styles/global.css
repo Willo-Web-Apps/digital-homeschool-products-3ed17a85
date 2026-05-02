@@ -1,53 +1,76 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Caveat:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 /* -----------------------------------------------------------------------
-   Design Tokens — Bright Nest Learning
-   Playful-creative · Warm coral, sunshine yellow, teal, deep navy
-   Light theme with vibrant colored sections
+   Design Tokens — Homegrown
+   Whimsical folk-art · Painterly, pastoral, vintage botanical
+   Parchment cream base · Sage green primary · Dusty rose accent
    ----------------------------------------------------------------------- */
 
 @theme {
   /* Typography */
-  --font-display: 'Fredoka', 'Comic Sans MS', ui-rounded, sans-serif;
-  --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-script:  'Caveat', cursive;
+  --font-body:    'Lora', Georgia, serif;
 
-  /* Brand — Coral Red (primary) */
-  --color-brand-50:  oklch(0.97 0.02 25);
-  --color-brand-100: oklch(0.93 0.05 25);
-  --color-brand-200: oklch(0.85 0.09 25);
-  --color-brand-400: oklch(0.70 0.16 25);
-  --color-brand-500: oklch(0.60 0.18 25);
-  --color-brand-600: oklch(0.50 0.18 25);
+  /* Brand — Sage Green (primary) */
+  --color-brand-50:  #EEF3EB;
+  --color-brand-100: #D6E4CF;
+  --color-brand-200: #BACDB1;
+  --color-brand-300: #8DAF7D;
+  --color-brand-400: #6E9160;
+  --color-brand-500: #5C7A4E;
+  --color-brand-600: #4A6340;
+  --color-brand-700: #3A4E32;
+  --color-brand-800: #2F4A35;
+  --color-brand-900: #1E3021;
 
-  /* Accent — Sunshine Yellow */
-  --color-accent-50:  oklch(0.98 0.03 85);
-  --color-accent-100: oklch(0.95 0.07 85);
-  --color-accent-200: oklch(0.92 0.12 85);
-  --color-accent-400: oklch(0.88 0.16 85);
-  --color-accent-500: oklch(0.85 0.17 85);
-  --color-accent-600: oklch(0.78 0.17 85);
+  /* Dusty Rose / Terracotta */
+  --color-rose-50:  #F9EDE8;
+  --color-rose-100: #F0CEBF;
+  --color-rose-200: #E4A98F;
+  --color-rose-300: #D48A6A;
+  --color-rose-400: #C4735A;
+  --color-rose-500: #B35E45;
+  --color-rose-600: #9A4A33;
 
-  /* Teal */
-  --color-teal-400: oklch(0.76 0.12 185);
-  --color-teal-500: oklch(0.72 0.12 185);
-  --color-teal-600: oklch(0.64 0.12 185);
-  --color-teal-50:  oklch(0.96 0.03 185);
-  --color-teal-100: oklch(0.92 0.06 185);
+  /* Straw / Golden */
+  --color-straw-100: #F5E8C0;
+  --color-straw-200: #EDD394;
+  --color-straw-300: #D4A843;
+  --color-straw-400: #BF9030;
+  --color-straw-500: #A87A22;
 
-  /* Navy */
-  --color-navy-900: oklch(0.22 0.07 255);
-  --color-navy-800: oklch(0.28 0.07 255);
-  --color-navy-700: oklch(0.34 0.07 255);
+  /* Sky Blue — soft, watercolor */
+  --color-sky-100:  #D8EAF3;
+  --color-sky-200:  #B5D4E6;
+  --color-sky-300:  #7BA7BC;
+  --color-sky-400:  #5E8FA6;
+  --color-sky-500:  #477890;
 
-  /* Surface — warm cream tones */
-  --color-surface-50:  oklch(0.985 0.012 60);
-  --color-surface-100: oklch(0.97 0.018 60);
-  --color-surface-200: oklch(0.93 0.020 60);
-  --color-surface-300: oklch(0.88 0.018 60);
-  --color-surface-800: oklch(0.30 0.015 60);
-  --color-surface-900: oklch(0.22 0.012 60);
-  --color-surface-950: oklch(0.14 0.010 60);
+  /* Dusty Lavender */
+  --color-lavender-100: #E5E2EF;
+  --color-lavender-200: #C8C2DF;
+  --color-lavender-300: #9B8EB5;
+  --color-lavender-400: #7D6FA0;
+
+  /* Surface — warm parchment tones */
+  --color-surface-50:  #FDFAF5;
+  --color-surface-100: #F5EFE0;
+  --color-surface-200: #EBE2CB;
+  --color-surface-300: #D9CEB2;
+  --color-surface-400: #BFB090;
+  --color-surface-500: #9E9070;
+  --color-surface-600: #7A6E55;
+  --color-surface-700: #5C5240;
+  --color-surface-800: #3D3628;
+  --color-surface-900: #2F2A1E;
+  --color-surface-950: #1A1610;
+
+  /* Forest deep */
+  --color-forest-900: #2F4A35;
+  --color-forest-800: #3A5C41;
+  --color-forest-700: #4A6E50;
 }
 
 /* -----------------------------------------------------------------------
@@ -84,12 +107,21 @@
   50%       { transform: translateY(-8px); }
 }
 
+@keyframes wobble {
+  0%   { transform: rotate(-1.5deg) scale(1); }
+  25%  { transform: rotate(1deg) scale(1.01); }
+  50%  { transform: rotate(-0.5deg) scale(1); }
+  75%  { transform: rotate(1.5deg) scale(1.01); }
+  100% { transform: rotate(-1.5deg) scale(1); }
+}
+
 .animate-fade-in    { animation: fadeIn 0.6s ease-out both; }
 .animate-slide-up   { animation: slideUp 0.65s ease-out both; }
 .animate-slide-left { animation: slideInLeft 0.65s ease-out both; }
 .animate-bounce-in  { animation: bounceIn 0.6s ease-out both; }
 .animate-wiggle     { animation: wiggle 2s ease-in-out infinite; }
 .animate-float      { animation: floatY 3s ease-in-out infinite; }
+.animate-wobble     { animation: wobble 6s ease-in-out infinite; }
 
 .delay-100 { animation-delay: 0.10s; }
 .delay-200 { animation-delay: 0.20s; }
@@ -97,3 +129,25 @@
 .delay-400 { animation-delay: 0.40s; }
 .delay-500 { animation-delay: 0.50s; }
 .delay-600 { animation-delay: 0.60s; }
+
+/* -----------------------------------------------------------------------
+   Utility classes
+   ----------------------------------------------------------------------- */
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+/* Subtle paper texture overlay */
+.paper-texture {
+  position: relative;
+}
+.paper-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+  border-radius: inherit;
+}
